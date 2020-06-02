@@ -4,7 +4,7 @@ const logicSig = require('../logicsig');
 const templates = require('./templates');
 const transaction = require('../transaction');
 const sha256 = require('js-sha256');
-const keccak256 = require('keccak256');
+const keccak256 = require('keccak');
 
 class HTLC {
     /**

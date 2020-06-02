@@ -6,11 +6,15 @@ const txnBuilder = require('./transaction');
 const multisig = require('./multisig');
 const bidBuilder = require('./bid');
 const algod = require('./client/algod');
+const algodV2 = require("./client/v2/algod/algod");
+const indexerV2 = require("./client/v2/indexer/indexer");
 const kmd = require('./client/kmd');
 const utils = require('./utils/utils');
 const logicsig = require('./logicsig');
 
 let Algod = algod.Algod;
+let AlgodClientV2 = algodV2.AlgodClient;
+let IndexerClientV2 = indexerV2.IndexerClient;
 let Kmd = kmd.Kmd;
 
 const SIGN_BYTES_PREFIX = Buffer.from([77, 88]); // "MX"
@@ -826,6 +830,8 @@ module.exports = {
     encodeObj,
     decodeObj,
     Algod,
+    AlgodClientV2,
+    IndexerClientV2,
     Kmd,
     mnemonicToMasterDerivationKey,
     masterDerivationKeyToMnemonic,
